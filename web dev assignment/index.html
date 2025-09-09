@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+
+    <!-- External CSS and Font Awesome -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <a href="#" class="logo"><span>Jose Katie</span></a>
+
+        <!-- Navigation Links -->
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+            
+        </ul>
+
+        <!-- Menu Icon for Mobile -->
+        <i class="fa-solid fa-compass" id="menu-icon"></i>
+
+        <!-- GitHub Button -->
+        <button class="visit-btn" id="github-btn">Visit GitHub</button>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="about-container">
+            <img src="imgs/firstimg.jpg" alt="Profile Image">
+
+            <div class="info-box">
+                <div class="text">
+                    <h3>Hi, I'm</h3>
+                    <h1>Jose Katie</h1>
+                    <span>Amateur Developer</span>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="btn-group">
+                    <a href="JOSE KATIE CV.pdf" class="btn" download>Download CV</a>
+                    <a href="#contact" class="btn">Contact</a>
+                </div>
+
+                <!-- Social Icons -->
+                <div class="socials">
+                    <a href="https://github.com/yourusername" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://wa.me/yourwhatsapplink" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-info">
+            <div class="grid">
+                <div class="grid-card">
+                    <i class="fa-solid fa-code-compare"></i>
+                    <span>C++, Java, HTML, CSS</span>
+                    <h3>Basic Understanding</h3>
+                    <p>I have a basic understanding of these languages, including writing simple programs, using variables, loops, conditionals, and basic functions.</p>
+                </div>
+                <div class="grid-card">
+                    <i class="fa-solid fa-code-commit"></i>
+                    <span>Teamwork</span>
+                    <h3>Excellent</h3>
+                    <p>I collaborate well with others, share ideas, and contribute effectively to group tasks.</p>
+                </div>
+                <div class="grid-card">
+                    <i class="fa-solid fa-file-code"></i>
+                    <span>Communication</span>
+                    <h3>Great Communication</h3>
+                    <p>I express ideas clearly, listen actively, and understand others effectively.</p>
+                </div>
+                <div class="grid-card">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <span>Flexibility</span>
+                    <h3>Open to Change</h3>
+                    <p>I adapt to new situations, handle changes, and adjust to different work environments.</p>
+                </div>
+            </div>
+            <img src="imgs/firstimg.jpg" alt="Skills Illustration">
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2 class="section-title">Recent Projects</h2>
+        <div class="project-card">
+            <img src="imgs/download.jpeg" alt="Banking System Project">
+            <h3>Banking System</h3>
+            <p>A basic terminal-based banking system with essential functions.</p>
+            <div class="btn-group">
+                
+                <a href="https://github.com/josekatie88" class="btn">GitHub Repo</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="imgs/download (1).jpeg" alt="Bean Buzz Project">
+            <h3>Bean Buzz</h3>
+            <p>A non-interactive website for an online coffee store with stylish design and layout.</p>
+            <div class="btn-group">
+                
+                <a href="https://github.com/josekatie88/BAnking-system-and-Database-Jose-Katie-0502175082085" class="btn">GitHub Repo</a>
+            </div>
+        </div>
+        <div class="project-card">
+            <img src="imgs/download (2).jpeg" alt="Banking System 2 Project">
+            <h3>Banking System 2</h3>
+            <p>An enhanced terminal-based banking system with additional functions.</p>
+            <div class="btn-group">
+                
+                <a href="https://github.com/josekatie88" class="btn">GitHub Repo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="input-box">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="input">
+                <input type="email" id="email" placeholder="example@email.com">
+                <i class="fa-solid fa-envelope"></i>
+            </div>
+            <div class="btn" id="submit-btn">Submit</div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <p class="copyright">© <span id="year"></span> All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const menuIcon = document.getElementById('menu-icon');
+        const navLinks = document.querySelector('.nav-links');
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Dynamic Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // GitHub Button
+        document.getElementById('github-btn').addEventListener('click', () => {
+            window.open('https://github.com/yourusername', '_blank');
+        });
+
+        // Contact Form Validation
+        document.getElementById('submit-btn').addEventListener('click', () => {
+            const email = document.getElementById('email').value;
+            const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (email.match(emailPattern)) {
+                alert('Thank you! Your message has been sent.');
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        });
+    </script>
+</body>
+</html>
